@@ -1,10 +1,10 @@
-Speech Understanding — Assignment 2
+##Speech Understanding — Assignment 2
 Code-Switched Lecture Transcription & LRL Voice Cloning Pipeline
 
 Roll No: M25DE1041
 Name: Abhinav Tote
 
-Overview
+##Overview
 This project implements a pipeline for transcribing Hinglish lecture audio and converting it into a Low Resource Language (Santhali) using voice cloning. It combines LID, constrained decoding, IPA mapping, and TTS.
 
 ### Repository Structure
