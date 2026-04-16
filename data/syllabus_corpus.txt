@@ -1,0 +1,59 @@
+Introduction to speech processing and speech understanding systems.
+The acoustic model maps features to phonemes using hidden markov models.
+Mel frequency cepstral coefficients are computed from the power spectrum of audio.
+The cepstrum is the inverse fourier transform of the log magnitude spectrum.
+Stochastic models include gaussian mixture models and hidden markov models.
+The viterbi algorithm finds the most likely state sequence in an hmm.
+Constrained beam search uses a language model to restrict hypotheses during decoding.
+Pre-emphasis filter boosts high frequency components before windowing the signal.
+Hamming window reduces spectral leakage in short time fourier transform analysis.
+Fundamental frequency or pitch is extracted using autocorrelation methods.
+Formant frequencies define the resonance characteristics of the vocal tract.
+Coarticulation refers to the influence of adjacent phonemes on each other.
+Prosody includes pitch duration and loudness variations in spoken language.
+Code switching occurs when speakers alternate between two or more languages.
+Language identification classifies speech segments by the language being spoken.
+Kneser-ney smoothing addresses the data sparsity problem in n-gram language models.
+Word error rate measures the edit distance between hypothesis and reference transcript.
+The connectionist temporal classification loss handles sequence to sequence alignment.
+Wav2vec learns speech representations through self-supervised contrastive learning.
+The conformer architecture combines convolution and self-attention mechanisms.
+Speaker verification uses d-vector or x-vector embeddings for identity comparison.
+Dynamic time warping aligns two sequences with different temporal lengths optimally.
+Zero-shot voice cloning synthesises speech in a new voice without additional training.
+The mel-cepstral distortion measures quality of synthesized audio against reference.
+Adversarial examples are imperceptible perturbations that fool machine learning classifiers.
+Fast gradient sign method computes adversarial perturbations from the loss gradient sign.
+Anti-spoofing systems detect synthetic or replayed speech using countermeasure models.
+Linear frequency cepstral coefficients differ from mfcc in the spacing of filter banks.
+Equal error rate balances false acceptance and false rejection rates at optimal threshold.
+Spectral subtraction removes stationary noise from speech signals using noise estimates.
+Deep learning models for speech recognition use encoder decoder transformer architectures.
+The attention mechanism allows models to focus on relevant parts of the input sequence.
+Speaker diarization segments audio by speaker identity using clustering algorithms.
+Voice activity detection identifies regions of speech versus silence in an audio stream.
+Pitch detection algorithms include autocorrelation yin pyin and praat methods.
+The short time fourier transform computes the spectrum of overlapping audio frames.
+Filterbank features are computed by applying triangular filters to the power spectrum.
+Delta features capture temporal dynamics of static cepstral coefficients over time.
+Neural language models use recurrent or transformer architectures for sequence modeling.
+Beam search explores multiple hypotheses simultaneously during sequence decoding.
+The baum-welch algorithm performs expectation maximization training for hidden markov models.
+Emission probabilities model the likelihood of observations given hidden states.
+Transition probabilities model the dynamics between hidden states in a markov chain.
+Phoneme recognition is the task of identifying discrete speech sounds from audio.
+Grapheme to phoneme conversion maps written characters to phonetic pronunciations.
+End to end speech recognition systems directly map audio to text without explicit phonemes.
+The encoder maps input audio features to a latent representation for decoding.
+Subword units such as byte pair encoding handle out of vocabulary words in speech systems.
+Language model shallow fusion combines acoustic model scores with external language model scores.
+Speaker adaptation fine-tunes acoustic models for a specific speaker using limited data.
+Transfer learning leverages pretrained representations for low resource speech tasks.
+Self-supervised pretraining on unlabeled audio improves downstream speech recognition performance.
+Multilingual models share parameters across languages to improve low resource performance.
+Code-switched speech contains alternating segments of two or more languages in one utterance.
+Hinglish is a form of code-switched speech combining Hindi and English vocabulary and grammar.
+The matrix language framework describes grammatical constraints in code-switched utterances.
+Embedded language islands are phrases from the non-matrix language inserted into utterances.
+Language boundaries in code-switched speech occur at morpheme clause and phrase levels.
+Bilingual lexical access involves parallel activation of words from two language systems.
