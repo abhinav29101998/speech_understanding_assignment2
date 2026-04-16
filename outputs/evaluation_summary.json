@@ -1,0 +1,6 @@
+{
+  "LID_segments": 1,
+  "LID_switch_precision_ms": 10.0,
+  "min_effective_epsilon": 1e-05,
+  "max_epsilon_snr40dB": 0.0006706354022026062
+}

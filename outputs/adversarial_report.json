@@ -1,0 +1,179 @@
+{
+  "min_effective_epsilon": 1e-05,
+  "max_epsilon_for_snr": 0.0006706354022026062,
+  "target_snr_db": 40.0,
+  "true_label": "hi",
+  "adversarial_target": "en",
+  "sweep": [
+    {
+      "epsilon": 1e-05,
+      "snr_db": 76.86,
+      "prediction": 0,
+      "misclassified": true,
+      "snr_constraint_met": true,
+      "attack_success": true
+    },
+    {
+      "epsilon": 1.624e-05,
+      "snr_db": 72.68,
+      "prediction": 0,
+      "misclassified": true,
+      "snr_constraint_met": true,
+      "attack_success": true
+    },
+    {
+      "epsilon": 2.637e-05,
+      "snr_db": 68.48,
+      "prediction": 0,
+      "misclassified": true,
+      "snr_constraint_met": true,
+      "attack_success": true
+    },
+    {
+      "epsilon": 4.281e-05,
+      "snr_db": 64.27,
+      "prediction": 0,
+      "misclassified": true,
+      "snr_constraint_met": true,
+      "attack_success": true
+    },
+    {
+      "epsilon": 6.952e-05,
+      "snr_db": 60.06,
+      "prediction": 0,
+      "misclassified": true,
+      "snr_constraint_met": true,
+      "attack_success": true
+    },
+    {
+      "epsilon": 0.00011288,
+      "snr_db": 55.85,
+      "prediction": 0,
+      "misclassified": true,
+      "snr_constraint_met": true,
+      "attack_success": true
+    },
+    {
+      "epsilon": 0.0001833,
+      "snr_db": 51.64,
+      "prediction": 0,
+      "misclassified": true,
+      "snr_constraint_met": true,
+      "attack_success": true
+    },
+    {
+      "epsilon": 0.00029764,
+      "snr_db": 47.43,
+      "prediction": 0,
+      "misclassified": true,
+      "snr_constraint_met": true,
+      "attack_success": true
+    },
+    {
+      "epsilon": 0.00048329,
+      "snr_db": 43.22,
+      "prediction": 0,
+      "misclassified": true,
+      "snr_constraint_met": true,
+      "attack_success": true
+    },
+    {
+      "epsilon": 0.00078476,
+      "snr_db": 39.01,
+      "prediction": 0,
+      "misclassified": true,
+      "snr_constraint_met": false,
+      "attack_success": false
+    },
+    {
+      "epsilon": 0.00127427,
+      "snr_db": 34.8,
+      "prediction": 0,
+      "misclassified": true,
+      "snr_constraint_met": false,
+      "attack_success": false
+    },
+    {
+      "epsilon": 0.00206914,
+      "snr_db": 30.59,
+      "prediction": 0,
+      "misclassified": true,
+      "snr_constraint_met": false,
+      "attack_success": false
+    },
+    {
+      "epsilon": 0.00335982,
+      "snr_db": 26.38,
+      "prediction": 0,
+      "misclassified": true,
+      "snr_constraint_met": false,
+      "attack_success": false
+    },
+    {
+      "epsilon": 0.00545559,
+      "snr_db": 22.17,
+      "prediction": 0,
+      "misclassified": true,
+      "snr_constraint_met": false,
+      "attack_success": false
+    },
+    {
+      "epsilon": 0.00885867,
+      "snr_db": 17.96,
+      "prediction": 0,
+      "misclassified": true,
+      "snr_constraint_met": false,
+      "attack_success": false
+    },
+    {
+      "epsilon": 0.0143845,
+      "snr_db": 13.75,
+      "prediction": 0,
+      "misclassified": true,
+      "snr_constraint_met": false,
+      "attack_success": false
+    },
+    {
+      "epsilon": 0.02335721,
+      "snr_db": 9.54,
+      "prediction": 0,
+      "misclassified": true,
+      "snr_constraint_met": false,
+      "attack_success": false
+    },
+    {
+      "epsilon": 0.0379269,
+      "snr_db": 5.33,
+      "prediction": 0,
+      "misclassified": true,
+      "snr_constraint_met": false,
+      "attack_success": false
+    },
+    {
+      "epsilon": 0.06158482,
+      "snr_db": 1.12,
+      "prediction": 0,
+      "misclassified": true,
+      "snr_constraint_met": false,
+      "attack_success": false
+    },
+    {
+      "epsilon": 0.1,
+      "snr_db": -3.09,
+      "prediction": 0,
+      "misclassified": true,
+      "snr_constraint_met": false,
+      "attack_success": false
+    }
+  ],
+  "adversarial_example": {
+    "epsilon": 1e-05,
+    "snr_db": 76.86018371582031,
+    "prediction": "en",
+    "files": {
+      "original": "outputs/adversarial/original_5sec.wav",
+      "adversarial": "outputs/adversarial/adversarial_5sec.wav",
+      "perturbation": "outputs/adversarial/perturbation.wav"
+    }
+  }
+}

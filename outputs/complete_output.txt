@@ -1,0 +1,805 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\WINDOWS\system32> cd G:\Downloads\PA2_submit
+>> venv\Scripts\activate
+(venv) PS G:\Downloads\PA2_submit> python
+Python 3.10.8 (tags/v3.10.8:aaaf517, Oct 11 2022, 16:50:30) [MSC v.1933 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import shutil
+>>> print(shutil.which("ffmpeg"))
+G:\Downloads\ffmpeg-2026-04-09-git-d3d0b7a5ee-full_build\bin\ffmpeg.EXE
+>>> python src/data_collection.py
+  File "<stdin>", line 1
+    python src/data_collection.py
+           ^^^
+SyntaxError: invalid syntax
+>>> exit()
+(venv) PS G:\Downloads\PA2_submit> python src/data_collection.py
+INFO: Audio already downloaded: outputs\lecture_full.wav
+ERROR: ffmpeg not found. Install with: sudo apt install ffmpeg
+(venv) PS G:\Downloads\PA2_submit> python src/data_collection.py
+INFO: Audio already downloaded: outputs\lecture_full.wav
+ERROR: ffmpeg not found. Install with: sudo apt install ffmpeg
+(venv) PS G:\Downloads\PA2_submit> setx FFMPEG_BINARY "G:\Downloads\ffmpeg-2026-04-09-git-d3d0b7a5ee-full_build\bin\ffmpeg.exe"
+
+SUCCESS: Specified value was saved.
+(venv) PS G:\Downloads\PA2_submit> python src/data_collection.py
+INFO: Audio already downloaded: outputs\lecture_full.wav
+ERROR: ffmpeg not found. Install with: sudo apt install ffmpeg
+(venv) PS G:\Downloads\PA2_submit> python src/data_collection.py
+INFO: Audio already downloaded: outputs\lecture_full.wav
+ERROR: ffmpeg not found. Install with: sudo apt install ffmpeg
+(venv) PS G:\Downloads\PA2_submit> FFMPEG_PATH = r"G:\Downloads\ffmpeg-2026-04-09-git-d3d0b7a5ee-full_build\bin"
+FFMPEG_PATH : The term 'FFMPEG_PATH' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is
+correct and try again.
+At line:1 char:1
++ FFMPEG_PATH = r"G:\Downloads\ffmpeg-2026-04-09-git-d3d0b7a5ee-full_bu ...
++ ~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (FFMPEG_PATH:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+(venv) PS G:\Downloads\PA2_submit> python src/data_collection.py
+INFO: Audio already downloaded: outputs\lecture_full.wav
+ERROR: ffmpeg not found. Install with: sudo apt install ffmpeg
+(venv) PS G:\Downloads\PA2_submit> python src/data_collection.py
+INFO: Audio already downloaded: outputs\lecture_full.wav
+ERROR: ffmpeg not found. Check installation.
+(venv) PS G:\Downloads\PA2_submit> G:\Downloads\ffmpeg-2026-04-09-git-d3d0b7a5ee-full_build\bin\ffmpeg.exe -version
+ffmpeg version 2026-04-09-git-d3d0b7a5ee-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers
+built with gcc 15.2.0 (Rev11, Built by MSYS2 project)
+configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libsvtjpegxs --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper
+libavutil      60. 29.100 / 60. 29.100
+libavcodec     62. 29.101 / 62. 29.101
+libavformat    62. 13.102 / 62. 13.102
+libavdevice    62.  4.100 / 62.  4.100
+libavfilter    11. 15.101 / 11. 15.101
+libswscale      9.  7.100 /  9.  7.100
+libswresample   6.  4.100 /  6.  4.100
+
+Exiting with exit code 0
+(venv) PS G:\Downloads\PA2_submit> python src/data_collection.py
+INFO: Audio already downloaded: outputs\lecture_full.wav
+Using FFmpeg at: G:\Downloads\ffmpeg-2026-04-09-git-d3d0b7a5ee-full_build\bin\ffmpeg.exe
+INFO: Extracting segment 02:32:00 + 600s → outputs\original_segment.wav …
+INFO: Segment saved: outputs\original_segment.wav (19.2 MB)
+WARNING: soundfile not installed — skipping verification.
+
+[OK] Segment ready at: outputs\original_segment.wav
+(venv) PS G:\Downloads\PA2_submit> cd G:\Downloads
+(venv) PS G:\Downloads> ffmpeg -i your_recording.mp4 -ar 16000 -ac 1 -acodec pcm_s16le outputs/student_voice_ref.wav
+ffmpeg version 2026-04-09-git-d3d0b7a5ee-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers
+  built with gcc 15.2.0 (Rev11, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libsvtjpegxs --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper
+  libavutil      60. 29.100 / 60. 29.100
+  libavcodec     62. 29.101 / 62. 29.101
+  libavformat    62. 13.102 / 62. 13.102
+  libavdevice    62.  4.100 / 62.  4.100
+  libavfilter    11. 15.101 / 11. 15.101
+  libswscale      9.  7.100 /  9.  7.100
+  libswresample   6.  4.100 /  6.  4.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'your_recording.mp4':
+  Metadata:
+    major_brand     : 3gp4
+    minor_version   : 0
+    compatible_brands: isom3gp4
+    creation_time   : 2026-04-15T17:51:37.000000Z
+    com.android.version: 16
+    com.samsung.android.utc_offset: +0530
+  Duration: 00:01:01.84, start: 0.000000, bitrate: 134 kb/s
+  Stream #0:0[0x1](eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 128 kb/s (default)
+    Metadata:
+      creation_time   : 2026-04-15T17:51:37.000000Z
+      handler_name    : SoundHandle
+[out#0/wav @ 000001d5f1909c40] Error opening output outputs/student_voice_ref.wav: No such file or directory
+Error opening output file outputs/student_voice_ref.wav.
+Error opening output files: No such file or directory
+(venv) PS G:\Downloads> cd G:\Downloads\PA2_submit
+(venv) PS G:\Downloads\PA2_submit> ffmpeg -i your_recording.mp4 -ar 16000 -ac 1 -acodec pcm_s16le outputs/student_voice_ref.wav
+ffmpeg version 2026-04-09-git-d3d0b7a5ee-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers
+  built with gcc 15.2.0 (Rev11, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libsvtjpegxs --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper
+  libavutil      60. 29.100 / 60. 29.100
+  libavcodec     62. 29.101 / 62. 29.101
+  libavformat    62. 13.102 / 62. 13.102
+  libavdevice    62.  4.100 / 62.  4.100
+  libavfilter    11. 15.101 / 11. 15.101
+  libswscale      9.  7.100 /  9.  7.100
+  libswresample   6.  4.100 /  6.  4.100
+[in#0 @ 000001dc2d1480c0] Error opening input: No such file or directory
+Error opening input file your_recording.mp4.
+Error opening input files: No such file or directory
+(venv) PS G:\Downloads\PA2_submit> ffmpeg -i your_recording.mp4 -ar 16000 -ac 1 -acodec pcm_s16le outputs/student_voice_ref.wav
+ffmpeg version 2026-04-09-git-d3d0b7a5ee-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers
+  built with gcc 15.2.0 (Rev11, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libsvtjpegxs --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper
+  libavutil      60. 29.100 / 60. 29.100
+  libavcodec     62. 29.101 / 62. 29.101
+  libavformat    62. 13.102 / 62. 13.102
+  libavdevice    62.  4.100 / 62.  4.100
+  libavfilter    11. 15.101 / 11. 15.101
+  libswscale      9.  7.100 /  9.  7.100
+  libswresample   6.  4.100 /  6.  4.100
+[in#0 @ 0000026ab40580c0] Error opening input: No such file or directory
+Error opening input file your_recording.mp4.
+Error opening input files: No such file or directory
+(venv) PS G:\Downloads\PA2_submit> ffmpeg -i your_recording.mp4 -ar 16000 -ac 1 -acodec pcm_s16le outputs/student_voice_ref.wav
+ffmpeg version 2026-04-09-git-d3d0b7a5ee-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers
+  built with gcc 15.2.0 (Rev11, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libsvtjpegxs --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper
+  libavutil      60. 29.100 / 60. 29.100
+  libavcodec     62. 29.101 / 62. 29.101
+  libavformat    62. 13.102 / 62. 13.102
+  libavdevice    62.  4.100 / 62.  4.100
+  libavfilter    11. 15.101 / 11. 15.101
+  libswscale      9.  7.100 /  9.  7.100
+  libswresample   6.  4.100 /  6.  4.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'your_recording.mp4':
+  Metadata:
+    major_brand     : 3gp4
+    minor_version   : 0
+    compatible_brands: isom3gp4
+    creation_time   : 2026-04-15T17:51:37.000000Z
+    com.android.version: 16
+    com.samsung.android.utc_offset: +0530
+  Duration: 00:01:01.84, start: 0.000000, bitrate: 134 kb/s
+  Stream #0:0[0x1](eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 128 kb/s (default)
+    Metadata:
+      creation_time   : 2026-04-15T17:51:37.000000Z
+      handler_name    : SoundHandle
+Stream mapping:
+  Stream #0:0 -> #0:0 (aac (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, wav, to 'outputs/student_voice_ref.wav':
+  Metadata:
+    major_brand     : 3gp4
+    minor_version   : 0
+    compatible_brands: isom3gp4
+    com.samsung.android.utc_offset: +0530
+    com.android.version: 16
+    ISFT            : Lavf62.13.102
+  Stream #0:0(eng): Audio: pcm_s16le ([1][0][0][0] / 0x0001), 16000 Hz, mono, s16, 256 kb/s (default)
+    Metadata:
+      encoder         : Lavc62.29.101 pcm_s16le
+      creation_time   : 2026-04-15T17:51:37.000000Z
+      handler_name    : SoundHandle
+[out#0/wav @ 000001dc32a89c40] video:0KiB audio:1933KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.003941%
+size=    1933KiB time=00:01:01.84 bitrate= 256.0kbits/s speed= 208x elapsed=0:00:00.29
+(venv) PS G:\Downloads\PA2_submit> python pipeline.py
+Traceback (most recent call last):
+  File "G:\Downloads\PA2_submit\pipeline.py", line 28, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+(venv) PS G:\Downloads\PA2_submit> (venv)
+venv : The term 'venv' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try
+again.
+At line:1 char:2
++ (venv)
++  ~~~~
+    + CategoryInfo          : ObjectNotFound: (venv:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+(venv) PS G:\Downloads\PA2_submit> pip install numpy
+Collecting numpy
+  Using cached numpy-2.2.6-cp310-cp310-win_amd64.whl (12.9 MB)
+Installing collected packages: numpy
+Successfully installed numpy-2.2.6
+WARNING: There was an error checking the latest version of pip.
+(venv) PS G:\Downloads\PA2_submit> python pipeline.py
+23:37:45 | INFO | pipeline | Stages to run: ['data', 'denoise', 'lid', 'transcribe', 'ipa', 'translate', 'embed', 'tts', 'prosody', 'cm', 'adv', 'report']
+23:37:45 | INFO | pipeline |
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | INFO | pipeline |   STAGE 0: Data Collection — YouTube → 10-min segment
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | INFO | pipeline | Segment already exists: outputs/original_segment.wav — skipping download.
+23:37:45 | INFO | pipeline |
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | INFO | pipeline |   STAGE 1: Denoising & Normalization (Task 1.3)
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | ERROR | pipeline | Stage 'denoise' failed: No module named 'soundfile'
+Traceback (most recent call last):
+  File "G:\Downloads\PA2_submit\pipeline.py", line 484, in <module>
+    STAGE_MAP[stage]()
+  File "G:\Downloads\PA2_submit\pipeline.py", line 104, in stage_denoise
+    denoise(
+  File "G:\Downloads\PA2_submit\src\denoising.py", line 152, in denoise
+    import soundfile as sf
+ModuleNotFoundError: No module named 'soundfile'
+23:37:45 | INFO | pipeline |
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | INFO | pipeline |   STAGE 2: Multi-Head Frame-Level LID (Task 1.1)
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | ERROR | pipeline | Stage 'lid' failed: No module named 'torch'
+Traceback (most recent call last):
+  File "G:\Downloads\PA2_submit\pipeline.py", line 484, in <module>
+    STAGE_MAP[stage]()
+  File "G:\Downloads\PA2_submit\pipeline.py", line 118, in stage_lid
+    from lid_model import train as lid_train, infer as lid_infer
+  File "G:\Downloads\PA2_submit\src\lid_model.py", line 33, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+23:37:45 | INFO | pipeline |
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | INFO | pipeline |   STAGE 3: Constrained Whisper Transcription (Task 1.2)
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | ERROR | pipeline | Stage 'transcribe' failed: No module named 'whisper'
+Traceback (most recent call last):
+  File "G:\Downloads\PA2_submit\pipeline.py", line 484, in <module>
+    STAGE_MAP[stage]()
+  File "G:\Downloads\PA2_submit\pipeline.py", line 162, in stage_transcribe
+    result = transcribe(
+  File "G:\Downloads\PA2_submit\src\transcription.py", line 93, in transcribe
+    import whisper, soundfile as sf
+ModuleNotFoundError: No module named 'whisper'
+23:37:45 | INFO | pipeline |
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | INFO | pipeline |   STAGE 4: Hinglish → IPA Unified Representation (Task 2.1)
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | ERROR | pipeline | Transcript not found: outputs/full_transcript.json
+23:37:45 | INFO | pipeline |
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | INFO | pipeline |   STAGE 5: Semantic Translation → Santhali LRL (Task 2.2)
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | INFO | translation | Parallel corpus saved: data/lrl_parallel_corpus.json  (75 entries)
+23:37:45 | ERROR | pipeline | IPA output not found: outputs/ipa_output.json
+23:37:45 | INFO | pipeline |
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | INFO | pipeline |   STAGE 6: Speaker Embedding Extraction (Task 3.1)
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | ERROR | pipeline | Stage 'embed' failed: No module named 'torch'
+Traceback (most recent call last):
+  File "G:\Downloads\PA2_submit\pipeline.py", line 484, in <module>
+    STAGE_MAP[stage]()
+  File "G:\Downloads\PA2_submit\pipeline.py", line 235, in stage_embed
+    from voice_embedding import extract_speaker_embedding
+  File "G:\Downloads\PA2_submit\src\voice_embedding.py", line 24, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+23:37:45 | INFO | pipeline |
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | INFO | pipeline |   STAGE 7: Zero-Shot TTS Synthesis in Santhali (Task 3.3)
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | ERROR | pipeline | Stage 'tts' failed: No module named 'torch'
+Traceback (most recent call last):
+  File "G:\Downloads\PA2_submit\pipeline.py", line 484, in <module>
+    STAGE_MAP[stage]()
+  File "G:\Downloads\PA2_submit\pipeline.py", line 262, in stage_tts
+    from tts_synthesis import synthesize, compute_mcd
+  File "G:\Downloads\PA2_submit\src\tts_synthesis.py", line 27, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+23:37:45 | INFO | pipeline |
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | INFO | pipeline |   STAGE 8: DTW Prosody Warping (Task 3.2)
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | ERROR | pipeline | TTS raw output not found: outputs/tts_raw.wav
+23:37:45 | INFO | pipeline |
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | INFO | pipeline |   STAGE 9: Anti-Spoofing Countermeasure (Task 4.1)
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | ERROR | pipeline | Stage 'cm' failed: No module named 'torch'
+Traceback (most recent call last):
+  File "G:\Downloads\PA2_submit\pipeline.py", line 484, in <module>
+    STAGE_MAP[stage]()
+  File "G:\Downloads\PA2_submit\pipeline.py", line 316, in stage_cm
+    from anti_spoofing import train as cm_train, evaluate as cm_eval
+  File "G:\Downloads\PA2_submit\src\anti_spoofing.py", line 38, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+23:37:45 | INFO | pipeline |
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | INFO | pipeline |   STAGE 10: Adversarial Robustness — FGSM (Task 4.2)
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | ERROR | pipeline | Stage 'adv' failed: No module named 'torch'
+Traceback (most recent call last):
+  File "G:\Downloads\PA2_submit\pipeline.py", line 484, in <module>
+    STAGE_MAP[stage]()
+  File "G:\Downloads\PA2_submit\pipeline.py", line 348, in stage_adv
+    from adversarial import run_adversarial_analysis
+  File "G:\Downloads\PA2_submit\src\adversarial.py", line 41, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+23:37:45 | INFO | pipeline |
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | INFO | pipeline |   STAGE 11: Evaluation Summary
+23:37:45 | INFO | pipeline | ============================================================
+23:37:45 | ERROR | pipeline | Stage 'report' failed: No module named 'torch'
+Traceback (most recent call last):
+  File "G:\Downloads\PA2_submit\pipeline.py", line 484, in <module>
+    STAGE_MAP[stage]()
+  File "G:\Downloads\PA2_submit\pipeline.py", line 388, in stage_report
+    from tts_synthesis import compute_mcd
+  File "G:\Downloads\PA2_submit\src\tts_synthesis.py", line 27, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+23:37:45 | INFO | pipeline |
+[DONE] Pipeline completed in 0.0 minutes.
+(venv) PS G:\Downloads\PA2_submit> pip install numpy soundfile librosa
+>> pip install torch torchvision torchaudio
+>> pip install openai-whisper
+>> pip install transformers speechbrain
+Requirement already satisfied: numpy in g:\downloads\pa2_submit\venv\lib\site-packages (2.2.6)
+Collecting soundfile
+  Using cached soundfile-0.13.1-py2.py3-none-win_amd64.whl (1.0 MB)
+Collecting librosa
+  Using cached librosa-0.11.0-py3-none-any.whl (260 kB)
+Collecting cffi>=1.0
+  Using cached cffi-2.0.0-cp310-cp310-win_amd64.whl (182 kB)
+Collecting pooch>=1.1
+  Using cached pooch-1.9.0-py3-none-any.whl (67 kB)
+Collecting lazy_loader>=0.1
+  Using cached lazy_loader-0.5-py3-none-any.whl (8.0 kB)
+Collecting numba>=0.51.0
+  Using cached numba-0.65.0-cp310-cp310-win_amd64.whl (2.7 MB)
+Collecting scikit-learn>=1.1.0
+  Using cached scikit_learn-1.7.2-cp310-cp310-win_amd64.whl (8.9 MB)
+Collecting soxr>=0.3.2
+  Using cached soxr-1.0.0-cp310-cp310-win_amd64.whl (173 kB)
+Collecting typing_extensions>=4.1.1
+  Using cached typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Collecting joblib>=1.0
+  Using cached joblib-1.5.3-py3-none-any.whl (309 kB)
+Collecting decorator>=4.3.0
+  Using cached decorator-5.2.1-py3-none-any.whl (9.2 kB)
+Collecting msgpack>=1.0
+  Using cached msgpack-1.1.2-cp310-cp310-win_amd64.whl (71 kB)
+Collecting audioread>=2.1.9
+  Using cached audioread-3.1.0-py3-none-any.whl (23 kB)
+Collecting scipy>=1.6.0
+  Using cached scipy-1.15.3-cp310-cp310-win_amd64.whl (41.3 MB)
+Collecting pycparser
+  Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+     ---------------------------------------- 48.2/48.2 kB 2.5 MB/s eta 0:00:00
+Collecting packaging
+  Using cached packaging-26.1-py3-none-any.whl (95 kB)
+Collecting llvmlite<0.48,>=0.47.0dev0
+  Downloading llvmlite-0.47.0-cp310-cp310-win_amd64.whl (38.1 MB)
+     ---------------------------------------- 38.1/38.1 MB 3.3 MB/s eta 0:00:00
+Collecting requests>=2.19.0
+  Using cached requests-2.33.1-py3-none-any.whl (64 kB)
+Collecting platformdirs>=2.5.0
+  Downloading platformdirs-4.9.6-py3-none-any.whl (21 kB)
+Collecting threadpoolctl>=3.1.0
+  Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Collecting idna<4,>=2.5
+  Using cached idna-3.11-py3-none-any.whl (71 kB)
+Collecting certifi>=2023.5.7
+  Using cached certifi-2026.2.25-py3-none-any.whl (153 kB)
+Collecting charset_normalizer<4,>=2
+  Downloading charset_normalizer-3.4.7-cp310-cp310-win_amd64.whl (159 kB)
+     ---------------------------------------- 159.2/159.2 kB 4.7 MB/s eta 0:00:00
+Collecting urllib3<3,>=1.26
+  Using cached urllib3-2.6.3-py3-none-any.whl (131 kB)
+Installing collected packages: urllib3, typing_extensions, threadpoolctl, soxr, scipy, pycparser, platformdirs, packaging, msgpack, llvmlite, joblib, idna, decorator, charset_normalizer, certifi, audioread, scikit-learn, requests, numba, lazy_loader, cffi, soundfile, pooch, librosa
+Successfully installed audioread-3.1.0 certifi-2026.2.25 cffi-2.0.0 charset_normalizer-3.4.7 decorator-5.2.1 idna-3.11 joblib-1.5.3 lazy_loader-0.5 librosa-0.11.0 llvmlite-0.47.0 msgpack-1.1.2 numba-0.65.0 packaging-26.1 platformdirs-4.9.6 pooch-1.9.0 pycparser-3.0 requests-2.33.1 scikit-learn-1.7.2 scipy-1.15.3 soundfile-0.13.1 soxr-1.0.0 threadpoolctl-3.6.0 typing_extensions-4.15.0 urllib3-2.6.3
+WARNING: There was an error checking the latest version of pip.
+Collecting torch
+  Using cached torch-2.11.0-cp310-cp310-win_amd64.whl (114.5 MB)
+Collecting torchvision
+  Using cached torchvision-0.26.0-cp310-cp310-win_amd64.whl (3.7 MB)
+Collecting torchaudio
+  Using cached torchaudio-2.11.0-cp310-cp310-win_amd64.whl (328 kB)
+Collecting filelock
+  Using cached filelock-3.28.0-py3-none-any.whl (39 kB)
+Collecting sympy>=1.13.3
+  Using cached sympy-1.14.0-py3-none-any.whl (6.3 MB)
+Collecting jinja2
+  Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Collecting fsspec>=0.8.5
+  Using cached fsspec-2026.3.0-py3-none-any.whl (202 kB)
+Requirement already satisfied: setuptools<82 in g:\downloads\pa2_submit\venv\lib\site-packages (from torch) (63.2.0)
+Requirement already satisfied: typing-extensions>=4.10.0 in g:\downloads\pa2_submit\venv\lib\site-packages (from torch) (4.15.0)
+Collecting networkx>=2.5.1
+  Using cached networkx-3.4.2-py3-none-any.whl (1.7 MB)
+Collecting pillow!=8.3.*,>=5.3.0
+  Using cached pillow-12.2.0-cp310-cp310-win_amd64.whl (7.1 MB)
+Requirement already satisfied: numpy in g:\downloads\pa2_submit\venv\lib\site-packages (from torchvision) (2.2.6)
+Collecting mpmath<1.4,>=1.1.0
+  Using cached mpmath-1.3.0-py3-none-any.whl (536 kB)
+Collecting MarkupSafe>=2.0
+  Downloading markupsafe-3.0.3-cp310-cp310-win_amd64.whl (15 kB)
+Installing collected packages: torchaudio, mpmath, sympy, pillow, networkx, MarkupSafe, fsspec, filelock, jinja2, torch, torchvision
+Successfully installed MarkupSafe-3.0.3 filelock-3.28.0 fsspec-2026.3.0 jinja2-3.1.6 mpmath-1.3.0 networkx-3.4.2 pillow-12.2.0 sympy-1.14.0 torch-2.11.0 torchaudio-2.11.0 torchvision-0.26.0
+WARNING: There was an error checking the latest version of pip.
+Collecting openai-whisper
+  Using cached openai_whisper-20250625.tar.gz (803 kB)
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting tiktoken
+  Using cached tiktoken-0.12.0-cp310-cp310-win_amd64.whl (879 kB)
+Requirement already satisfied: numba in g:\downloads\pa2_submit\venv\lib\site-packages (from openai-whisper) (0.65.0)
+Collecting more-itertools
+  Using cached more_itertools-11.0.2-py3-none-any.whl (71 kB)
+Requirement already satisfied: numpy in g:\downloads\pa2_submit\venv\lib\site-packages (from openai-whisper) (2.2.6)
+Collecting tqdm
+  Using cached tqdm-4.67.3-py3-none-any.whl (78 kB)
+Requirement already satisfied: torch in g:\downloads\pa2_submit\venv\lib\site-packages (from openai-whisper) (2.11.0)
+Requirement already satisfied: llvmlite<0.48,>=0.47.0dev0 in g:\downloads\pa2_submit\venv\lib\site-packages (from numba->openai-whisper) (0.47.0)
+Requirement already satisfied: requests>=2.26.0 in g:\downloads\pa2_submit\venv\lib\site-packages (from tiktoken->openai-whisper) (2.33.1)
+Collecting regex>=2022.1.18
+  Using cached regex-2026.4.4-cp310-cp310-win_amd64.whl (278 kB)
+Requirement already satisfied: sympy>=1.13.3 in g:\downloads\pa2_submit\venv\lib\site-packages (from torch->openai-whisper) (1.14.0)
+Requirement already satisfied: jinja2 in g:\downloads\pa2_submit\venv\lib\site-packages (from torch->openai-whisper) (3.1.6)
+Requirement already satisfied: setuptools<82 in g:\downloads\pa2_submit\venv\lib\site-packages (from torch->openai-whisper) (63.2.0)
+Requirement already satisfied: fsspec>=0.8.5 in g:\downloads\pa2_submit\venv\lib\site-packages (from torch->openai-whisper) (2026.3.0)
+Requirement already satisfied: filelock in g:\downloads\pa2_submit\venv\lib\site-packages (from torch->openai-whisper) (3.28.0)
+Requirement already satisfied: typing-extensions>=4.10.0 in g:\downloads\pa2_submit\venv\lib\site-packages (from torch->openai-whisper) (4.15.0)
+Requirement already satisfied: networkx>=2.5.1 in g:\downloads\pa2_submit\venv\lib\site-packages (from torch->openai-whisper) (3.4.2)
+Collecting colorama
+  Using cached colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Requirement already satisfied: urllib3<3,>=1.26 in g:\downloads\pa2_submit\venv\lib\site-packages (from requests>=2.26.0->tiktoken->openai-whisper) (2.6.3)
+Requirement already satisfied: idna<4,>=2.5 in g:\downloads\pa2_submit\venv\lib\site-packages (from requests>=2.26.0->tiktoken->openai-whisper) (3.11)
+Requirement already satisfied: certifi>=2023.5.7 in g:\downloads\pa2_submit\venv\lib\site-packages (from requests>=2.26.0->tiktoken->openai-whisper) (2026.2.25)
+Requirement already satisfied: charset_normalizer<4,>=2 in g:\downloads\pa2_submit\venv\lib\site-packages (from requests>=2.26.0->tiktoken->openai-whisper) (3.4.7)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in g:\downloads\pa2_submit\venv\lib\site-packages (from sympy>=1.13.3->torch->openai-whisper) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in g:\downloads\pa2_submit\venv\lib\site-packages (from jinja2->torch->openai-whisper) (3.0.3)
+Building wheels for collected packages: openai-whisper
+  Building wheel for openai-whisper (pyproject.toml) ... done
+  Created wheel for openai-whisper: filename=openai_whisper-20250625-py3-none-any.whl size=804012 sha256=f36aef632d2b738f3104ada446bb808831552492944d8c6007049b6c3b9fef4e
+  Stored in directory: c:\users\lenovo\appdata\local\pip\cache\wheels\be\22\86\dcf050d50e02b3bb67b5a3b289be2f3376ce7f8717d012d6a8
+Successfully built openai-whisper
+Installing collected packages: regex, more-itertools, colorama, tqdm, tiktoken, openai-whisper
+Successfully installed colorama-0.4.6 more-itertools-11.0.2 openai-whisper-20250625 regex-2026.4.4 tiktoken-0.12.0 tqdm-4.67.3
+WARNING: There was an error checking the latest version of pip.
+Collecting transformers
+  Using cached transformers-5.5.4-py3-none-any.whl (10.2 MB)
+Collecting speechbrain
+  Using cached speechbrain-1.1.0-py3-none-any.whl (2.3 MB)
+Collecting pyyaml>=5.1
+  Using cached pyyaml-6.0.3-cp310-cp310-win_amd64.whl (158 kB)
+Requirement already satisfied: packaging>=20.0 in g:\downloads\pa2_submit\venv\lib\site-packages (from transformers) (26.1)
+Requirement already satisfied: numpy>=1.17 in g:\downloads\pa2_submit\venv\lib\site-packages (from transformers) (2.2.6)
+Collecting huggingface-hub<2.0,>=1.5.0
+  Using cached huggingface_hub-1.10.2-py3-none-any.whl (642 kB)
+Collecting typer
+  Using cached typer-0.24.1-py3-none-any.whl (56 kB)
+Requirement already satisfied: tqdm>=4.27 in g:\downloads\pa2_submit\venv\lib\site-packages (from transformers) (4.67.3)
+Collecting safetensors>=0.4.3
+  Using cached safetensors-0.7.0-cp38-abi3-win_amd64.whl (341 kB)
+Collecting tokenizers<=0.23.0,>=0.22.0
+  Using cached tokenizers-0.22.2-cp39-abi3-win_amd64.whl (2.7 MB)
+Requirement already satisfied: regex>=2025.10.22 in g:\downloads\pa2_submit\venv\lib\site-packages (from transformers) (2026.4.4)
+Collecting sentencepiece>=0.1.91
+  Using cached sentencepiece-0.2.1-cp310-cp310-win_amd64.whl (1.1 MB)
+Requirement already satisfied: requests>=2.20.0 in g:\downloads\pa2_submit\venv\lib\site-packages (from speechbrain) (2.33.1)
+Collecting hyperpyyaml>=0.0.1
+  Using cached hyperpyyaml-1.2.3-py3-none-any.whl (16 kB)
+Requirement already satisfied: torchaudio>=2.1.0 in g:\downloads\pa2_submit\venv\lib\site-packages (from speechbrain) (2.11.0)
+Requirement already satisfied: joblib>=0.14.1 in g:\downloads\pa2_submit\venv\lib\site-packages (from speechbrain) (1.5.3)
+Requirement already satisfied: torch>=2.1.0 in g:\downloads\pa2_submit\venv\lib\site-packages (from speechbrain) (2.11.0)
+Requirement already satisfied: scipy>=1.4.1 in g:\downloads\pa2_submit\venv\lib\site-packages (from speechbrain) (1.15.3)
+Requirement already satisfied: soundfile>=0.12.1 in g:\downloads\pa2_submit\venv\lib\site-packages (from speechbrain) (0.13.1)
+Requirement already satisfied: filelock>=3.10.0 in g:\downloads\pa2_submit\venv\lib\site-packages (from huggingface-hub<2.0,>=1.5.0->transformers) (3.28.0)
+Collecting httpx<1,>=0.23.0
+  Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+     ---------------------------------------- 73.5/73.5 kB 4.0 MB/s eta 0:00:00
+Requirement already satisfied: typing-extensions>=4.1.0 in g:\downloads\pa2_submit\venv\lib\site-packages (from huggingface-hub<2.0,>=1.5.0->transformers) (4.15.0)
+Requirement already satisfied: fsspec>=2023.5.0 in g:\downloads\pa2_submit\venv\lib\site-packages (from huggingface-hub<2.0,>=1.5.0->transformers) (2026.3.0)
+Collecting hf-xet<2.0.0,>=1.4.3
+  Downloading hf_xet-1.4.3-cp37-abi3-win_amd64.whl (3.7 MB)
+     ---------------------------------------- 3.7/3.7 MB 1.7 MB/s eta 0:00:00
+Collecting ruamel.yaml<0.19.0,>=0.17.28
+  Downloading ruamel_yaml-0.18.17-py3-none-any.whl (121 kB)
+     ---------------------------------------- 121.6/121.6 kB 1.4 MB/s eta 0:00:00
+Requirement already satisfied: urllib3<3,>=1.26 in g:\downloads\pa2_submit\venv\lib\site-packages (from requests>=2.20.0->speechbrain) (2.6.3)
+Requirement already satisfied: certifi>=2023.5.7 in g:\downloads\pa2_submit\venv\lib\site-packages (from requests>=2.20.0->speechbrain) (2026.2.25)
+Requirement already satisfied: charset_normalizer<4,>=2 in g:\downloads\pa2_submit\venv\lib\site-packages (from requests>=2.20.0->speechbrain) (3.4.7)
+Requirement already satisfied: idna<4,>=2.5 in g:\downloads\pa2_submit\venv\lib\site-packages (from requests>=2.20.0->speechbrain) (3.11)
+Requirement already satisfied: cffi>=1.0 in g:\downloads\pa2_submit\venv\lib\site-packages (from soundfile>=0.12.1->speechbrain) (2.0.0)
+Requirement already satisfied: jinja2 in g:\downloads\pa2_submit\venv\lib\site-packages (from torch>=2.1.0->speechbrain) (3.1.6)
+Requirement already satisfied: networkx>=2.5.1 in g:\downloads\pa2_submit\venv\lib\site-packages (from torch>=2.1.0->speechbrain) (3.4.2)
+Requirement already satisfied: sympy>=1.13.3 in g:\downloads\pa2_submit\venv\lib\site-packages (from torch>=2.1.0->speechbrain) (1.14.0)
+Requirement already satisfied: setuptools<82 in g:\downloads\pa2_submit\venv\lib\site-packages (from torch>=2.1.0->speechbrain) (63.2.0)
+Requirement already satisfied: colorama in g:\downloads\pa2_submit\venv\lib\site-packages (from tqdm>=4.27->transformers) (0.4.6)
+Collecting click>=8.2.1
+  Downloading click-8.3.2-py3-none-any.whl (108 kB)
+     ---------------------------------------- 108.4/108.4 kB 2.1 MB/s eta 0:00:00
+Collecting shellingham>=1.3.0
+  Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+Collecting rich>=12.3.0
+  Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+     ---------------------------------------- 310.7/310.7 kB 3.2 MB/s eta 0:00:00
+Collecting annotated-doc>=0.0.2
+  Downloading annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+Requirement already satisfied: pycparser in g:\downloads\pa2_submit\venv\lib\site-packages (from cffi>=1.0->soundfile>=0.12.1->speechbrain) (3.0)
+Collecting anyio
+  Downloading anyio-4.13.0-py3-none-any.whl (114 kB)
+     ---------------------------------------- 114.4/114.4 kB 3.4 MB/s eta 0:00:00
+Collecting httpcore==1.*
+  Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+     ---------------------------------------- 78.8/78.8 kB 4.3 MB/s eta 0:00:00
+Collecting h11>=0.16
+  Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Collecting pygments<3.0.0,>=2.13.0
+  Downloading pygments-2.20.0-py3-none-any.whl (1.2 MB)
+     ---------------------------------------- 1.2/1.2 MB 4.9 MB/s eta 0:00:00
+Collecting markdown-it-py>=2.2.0
+  Downloading markdown_it_py-4.0.0-py3-none-any.whl (87 kB)
+     ---------------------------------------- 87.3/87.3 kB 2.5 MB/s eta 0:00:00
+Collecting ruamel.yaml.clib>=0.2.15
+  Downloading ruamel_yaml_clib-0.2.15-cp310-cp310-win_amd64.whl (121 kB)
+     ---------------------------------------- 121.9/121.9 kB 7.4 MB/s eta 0:00:00
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in g:\downloads\pa2_submit\venv\lib\site-packages (from sympy>=1.13.3->torch>=2.1.0->speechbrain) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in g:\downloads\pa2_submit\venv\lib\site-packages (from jinja2->torch>=2.1.0->speechbrain) (3.0.3)
+Collecting mdurl~=0.1
+  Using cached mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Collecting exceptiongroup>=1.0.2
+  Downloading exceptiongroup-1.3.1-py3-none-any.whl (16 kB)
+Installing collected packages: shellingham, sentencepiece, safetensors, ruamel.yaml.clib, pyyaml, pygments, mdurl, hf-xet, h11, exceptiongroup, click, annotated-doc, ruamel.yaml, markdown-it-py, httpcore, anyio, rich, hyperpyyaml, httpx, typer, huggingface-hub, tokenizers, speechbrain, transformers
+Successfully installed annotated-doc-0.0.4 anyio-4.13.0 click-8.3.2 exceptiongroup-1.3.1 h11-0.16.0 hf-xet-1.4.3 httpcore-1.0.9 httpx-0.28.1 huggingface-hub-1.10.2 hyperpyyaml-1.2.3 markdown-it-py-4.0.0 mdurl-0.1.2 pygments-2.20.0 pyyaml-6.0.3 rich-15.0.0 ruamel.yaml-0.18.17 ruamel.yaml.clib-0.2.15 safetensors-0.7.0 sentencepiece-0.2.1 shellingham-1.5.4 speechbrain-1.1.0 tokenizers-0.22.2 transformers-5.5.4 typer-0.24.1
+WARNING: There was an error checking the latest version of pip.
+(venv) PS G:\Downloads\PA2_submit> python pipeline.py
+23:46:47 | INFO | pipeline | Stages to run: ['data', 'denoise', 'lid', 'transcribe', 'ipa', 'translate', 'embed', 'tts', 'prosody', 'cm', 'adv', 'report']
+23:46:47 | INFO | pipeline |
+23:46:47 | INFO | pipeline | ============================================================
+23:46:47 | INFO | pipeline |   STAGE 0: Data Collection — YouTube → 10-min segment
+23:46:47 | INFO | pipeline | ============================================================
+23:46:47 | INFO | pipeline | Segment already exists: outputs/original_segment.wav — skipping download.
+23:46:47 | INFO | pipeline |
+23:46:47 | INFO | pipeline | ============================================================
+23:46:47 | INFO | pipeline |   STAGE 1: Denoising & Normalization (Task 1.3)
+23:46:47 | INFO | pipeline | ============================================================
+23:46:47 | INFO | denoising | Loading: outputs/original_segment.wav
+23:46:47 | INFO | denoising | Denoising with method='spectral' …
+23:47:06 | INFO | denoising | Denoised audio saved: outputs/denoised_segment.wav
+23:47:06 | INFO | pipeline | [✓] Denoising complete: outputs/denoised_segment.wav
+23:47:06 | INFO | pipeline |
+23:47:06 | INFO | pipeline | ============================================================
+23:47:06 | INFO | pipeline |   STAGE 2: Multi-Head Frame-Level LID (Task 1.1)
+23:47:06 | INFO | pipeline | ============================================================
+23:47:19 | INFO | pipeline | Training LID model …
+23:47:19 | INFO | lid_model | Loading audio: outputs/denoised_segment.wav
+23:47:22 | INFO | lid_model | Generating pseudo-labels with Whisper …
+23:49:41 | INFO | lid_model | Generated 200 pseudo-label segments.
+23:50:10 | INFO | lid_model | Dataset: 200 samples
+23:50:27 | INFO | lid_model | Epoch   1/30 | loss=0.1712 | val_F1=1.0000
+23:50:27 | INFO | lid_model |   ✓ Best model saved (F1=1.0000)
+23:50:36 | INFO | lid_model | Epoch   2/30 | loss=0.0824 | val_F1=1.0000
+23:50:45 | INFO | lid_model | Epoch   3/30 | loss=0.0483 | val_F1=1.0000
+23:50:54 | INFO | lid_model | Epoch   4/30 | loss=0.0597 | val_F1=1.0000
+23:51:02 | INFO | lid_model | Epoch   5/30 | loss=0.0452 | val_F1=1.0000
+23:51:11 | INFO | lid_model | Epoch   6/30 | loss=0.0518 | val_F1=1.0000
+23:51:20 | INFO | lid_model | Epoch   7/30 | loss=0.0355 | val_F1=1.0000
+23:51:28 | INFO | lid_model | Epoch   8/30 | loss=0.0465 | val_F1=1.0000
+23:51:37 | INFO | lid_model | Epoch   9/30 | loss=0.0468 | val_F1=1.0000
+23:51:46 | INFO | lid_model | Epoch  10/30 | loss=0.0353 | val_F1=1.0000
+23:51:54 | INFO | lid_model | Epoch  11/30 | loss=0.0288 | val_F1=1.0000
+23:52:03 | INFO | lid_model | Epoch  12/30 | loss=0.0306 | val_F1=1.0000
+23:52:12 | INFO | lid_model | Epoch  13/30 | loss=0.0176 | val_F1=1.0000
+23:52:21 | INFO | lid_model | Epoch  14/30 | loss=0.0087 | val_F1=1.0000
+23:52:29 | INFO | lid_model | Epoch  15/30 | loss=0.0071 | val_F1=1.0000
+23:52:38 | INFO | lid_model | Epoch  16/30 | loss=0.0152 | val_F1=1.0000
+23:52:47 | INFO | lid_model | Epoch  17/30 | loss=0.0127 | val_F1=1.0000
+23:52:55 | INFO | lid_model | Epoch  18/30 | loss=0.0078 | val_F1=1.0000
+23:53:04 | INFO | lid_model | Epoch  19/30 | loss=0.0013 | val_F1=1.0000
+23:53:13 | INFO | lid_model | Epoch  20/30 | loss=0.0009 | val_F1=1.0000
+23:53:21 | INFO | lid_model | Epoch  21/30 | loss=0.0004 | val_F1=1.0000
+23:53:30 | INFO | lid_model | Epoch  22/30 | loss=0.0006 | val_F1=1.0000
+23:53:39 | INFO | lid_model | Epoch  23/30 | loss=0.0003 | val_F1=1.0000
+23:53:47 | INFO | lid_model | Epoch  24/30 | loss=0.0005 | val_F1=1.0000
+23:53:56 | INFO | lid_model | Epoch  25/30 | loss=0.0002 | val_F1=1.0000
+23:54:04 | INFO | lid_model | Epoch  26/30 | loss=0.0002 | val_F1=1.0000
+23:54:13 | INFO | lid_model | Epoch  27/30 | loss=0.0002 | val_F1=1.0000
+23:54:22 | INFO | lid_model | Epoch  28/30 | loss=0.0002 | val_F1=1.0000
+23:54:31 | INFO | lid_model | Epoch  29/30 | loss=0.0002 | val_F1=1.0000
+23:54:40 | INFO | lid_model | Epoch  30/30 | loss=0.0003 | val_F1=1.0000
+23:54:40 | INFO | lid_model | Training complete. Best F1=1.0000  (target ≥0.85)
+23:54:41 | INFO | pipeline | LID training F1: 1.0000
+23:54:41 | INFO | pipeline | Running LID inference …
+23:54:42 | INFO | lid_model | Loaded LID weights: models/lid_model.pt
+23:54:50 | INFO | lid_model | Utterance-level LID (Head-2): en  p=1.000
+23:54:50 | INFO | lid_model | Frame-level segments: 1
+23:54:50 | INFO | lid_model | Language switch timestamps (±200 ms precision guaranteed by FRAME_HOP=10ms):
+23:54:50 | INFO | pipeline | [✓] LID complete: 1 segments  (en=1  hi=0)
+23:54:50 | INFO | pipeline |
+23:54:50 | INFO | pipeline | ============================================================
+23:54:50 | INFO | pipeline |   STAGE 3: Constrained Whisper Transcription (Task 1.2)
+23:54:50 | INFO | pipeline | ============================================================
+23:54:50 | INFO | transcription | Loading audio: outputs/denoised_segment.wav
+23:54:50 | INFO | transcription |   Duration: 600.0s  | SR: 16000 Hz
+23:54:50 | INFO | transcription | Loading Whisper large-v3 …
+100%|█████████████████████████████████████| 2.88G/2.88G [14:39<00:00, 3.51MiB/s]
+00:12:54 | INFO | ngram_lm | N-gram LM loaded: models/ngram_lm.json  (n=3)
+00:13:01 | INFO | ngram_lm | Logit-bias table: 157 tokens boosted.
+00:13:01 | INFO | constrained_decoding | Running constrained decoding (beam=5, α=0.3) …
+00:13:08 | ERROR | constrained_decoding | Constrained decode failed: Given groups=1, weight of size [1280, 128, 3], expected input[1, 80, 3000] to have 128 channels, but got 80 channels instead. Using standard decode.
+00:13:08 | ERROR | pipeline | Stage 'transcribe' failed: Given groups=1, weight of size [1280, 128, 3], expected input[1, 80, 3000] to have 128 channels, but got 80 channels instead
+Traceback (most recent call last):
+  File "G:\Downloads\PA2_submit\src\constrained_decoding.py", line 176, in transcribe
+    result = whisper.decode(self.model, mel, options)
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\whisper\decoding.py", line 824, in decode
+    result = DecodingTask(model, options).run(mel)
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\whisper\decoding.py", line 718, in run
+    audio_features: Tensor = self._get_audio_features(mel)  # encoder forward pass
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\whisper\decoding.py", line 655, in _get_audio_features
+    audio_features = self.model.encoder(mel)
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\whisper\model.py", line 193, in forward
+    x = F.gelu(self.conv1(x))
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\torch\nn\modules\conv.py", line 375, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\whisper\model.py", line 57, in _conv_forward
+    return super()._conv_forward(
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\torch\nn\modules\conv.py", line 370, in _conv_forward
+    return F.conv1d(
+RuntimeError: Given groups=1, weight of size [1280, 128, 3], expected input[1, 80, 3000] to have 128 channels, but got 80 channels instead
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "G:\Downloads\PA2_submit\pipeline.py", line 484, in <module>
+    STAGE_MAP[stage]()
+  File "G:\Downloads\PA2_submit\pipeline.py", line 162, in stage_transcribe
+    result = transcribe(
+  File "G:\Downloads\PA2_submit\src\transcription.py", line 125, in transcribe
+    segments = transcribe_full_audio(
+  File "G:\Downloads\PA2_submit\src\constrained_decoding.py", line 227, in transcribe_full_audio
+    result = decoder.transcribe(chunk_padded)
+  File "G:\Downloads\PA2_submit\src\constrained_decoding.py", line 183, in transcribe
+    result = whisper.decode(self.model, mel, options)
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\whisper\decoding.py", line 824, in decode
+    result = DecodingTask(model, options).run(mel)
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\whisper\decoding.py", line 718, in run
+    audio_features: Tensor = self._get_audio_features(mel)  # encoder forward pass
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\whisper\decoding.py", line 655, in _get_audio_features
+    audio_features = self.model.encoder(mel)
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\whisper\model.py", line 193, in forward
+    x = F.gelu(self.conv1(x))
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\torch\nn\modules\conv.py", line 375, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\whisper\model.py", line 57, in _conv_forward
+    return super()._conv_forward(
+  File "G:\Downloads\PA2_submit\venv\lib\site-packages\torch\nn\modules\conv.py", line 370, in _conv_forward
+    return F.conv1d(
+RuntimeError: Given groups=1, weight of size [1280, 128, 3], expected input[1, 80, 3000] to have 128 channels, but got 80 channels instead
+00:13:08 | INFO | pipeline |
+00:13:08 | INFO | pipeline | ============================================================
+00:13:08 | INFO | pipeline |   STAGE 4: Hinglish → IPA Unified Representation (Task 2.1)
+00:13:08 | INFO | pipeline | ============================================================
+00:13:09 | ERROR | pipeline | Transcript not found: outputs/full_transcript.json
+00:13:09 | INFO | pipeline |
+00:13:09 | INFO | pipeline | ============================================================
+00:13:09 | INFO | pipeline |   STAGE 5: Semantic Translation → Santhali LRL (Task 2.2)
+00:13:09 | INFO | pipeline | ============================================================
+00:13:09 | INFO | translation | Parallel corpus saved: data/lrl_parallel_corpus.json  (75 entries)
+00:13:09 | ERROR | pipeline | IPA output not found: outputs/ipa_output.json
+00:13:09 | INFO | pipeline |
+00:13:09 | INFO | pipeline | ============================================================
+00:13:09 | INFO | pipeline |   STAGE 6: Speaker Embedding Extraction (Task 3.1)
+00:13:09 | INFO | pipeline | ============================================================
+00:13:09 | INFO | voice_embedding | Reference audio: 61.8s  |  sr=16000
+00:13:12 | INFO | speechbrain.utils.quirks | Applied quirks (see `speechbrain.utils.quirks`): [disable_jit_profiling, allow_tf32]
+00:13:12 | INFO | speechbrain.utils.quirks | Excluded quirks specified by the `SB_DISABLE_QUIRKS` environment (comma-separated list): []
+00:13:13 | INFO | voice_embedding | Extracting x-vector via SpeechBrain ECAPA-TDNN …
+00:13:13 | INFO | speechbrain.utils.fetching | Fetch hyperparams.yaml: Fetching from HuggingFace Hub 'speechbrain/spkrec-ecapa-voxceleb' if not cached
+00:13:16 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb/resolve/main/hyperparams.yaml "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+00:13:16 | WARNING | huggingface_hub.utils._http | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+00:13:16 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/speechbrain/spkrec-ecapa-voxceleb/0f99f2d0ebe89ac095bcc5903c4dd8f72b367286/hyperparams.yaml "HTTP/1.1 200 OK"
+00:13:16 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/speechbrain/spkrec-ecapa-voxceleb/0f99f2d0ebe89ac095bcc5903c4dd8f72b367286/hyperparams.yaml "HTTP/1.1 200 OK"
+hyperparams.yaml: 1.92kB [00:00, 408kB/s]
+G:\Downloads\PA2_submit\venv\lib\site-packages\speechbrain\utils\fetching.py:153: UserWarning: Using SYMLINK strategy on Windows for fetching potentially requires elevated privileges and is not recommended. See `LocalStrategy` documentation.
+  warnings.warn(
+G:\Downloads\PA2_submit\venv\lib\site-packages\speechbrain\utils\parameter_transfer.py:234: UserWarning: Requested Pretrainer collection using symlinks on Windows. This might not work; see `LocalStrategy` documentation. Consider unsetting `collect_in` in Pretrainer to avoid symlinking altogether.
+  warnings.warn(
+00:13:18 | INFO | speechbrain.utils.fetching | Fetch embedding_model.ckpt: Fetching from HuggingFace Hub 'speechbrain/spkrec-ecapa-voxceleb' if not cached
+00:13:18 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb/resolve/main/embedding_model.ckpt "HTTP/1.1 302 Found"
+00:13:19 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/speechbrain/spkrec-ecapa-voxceleb/xet-read-token/0f99f2d0ebe89ac095bcc5903c4dd8f72b367286 "HTTP/1.1 200 OK"
+embedding_model.ckpt: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 83.3M/83.3M [00:24<00:00, 3.44MB/s]
+00:13:43 | INFO | speechbrain.utils.fetching | Fetch mean_var_norm_emb.ckpt: Fetching from HuggingFace Hub 'speechbrain/spkrec-ecapa-voxceleb' if not cached
+00:13:44 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb/resolve/main/mean_var_norm_emb.ckpt "HTTP/1.1 307 Temporary Redirect"
+00:13:44 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/speechbrain/spkrec-ecapa-voxceleb/0f99f2d0ebe89ac095bcc5903c4dd8f72b367286/mean_var_norm_emb.ckpt "HTTP/1.1 200 OK"
+00:13:44 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/speechbrain/spkrec-ecapa-voxceleb/0f99f2d0ebe89ac095bcc5903c4dd8f72b367286/mean_var_norm_emb.ckpt "HTTP/1.1 200 OK"
+mean_var_norm_emb.ckpt: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1.92k/1.92k [00:00<?, ?B/s]
+00:13:44 | INFO | speechbrain.utils.fetching | Fetch classifier.ckpt: Fetching from HuggingFace Hub 'speechbrain/spkrec-ecapa-voxceleb' if not cached
+00:13:44 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb/resolve/main/classifier.ckpt "HTTP/1.1 302 Found"
+classifier.ckpt: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 5.53M/5.53M [00:01<00:00, 3.05MB/s]
+00:13:46 | INFO | speechbrain.utils.fetching | Fetch label_encoder.txt: Fetching from HuggingFace Hub 'speechbrain/spkrec-ecapa-voxceleb' if not cached
+00:13:46 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb/resolve/main/label_encoder.txt "HTTP/1.1 307 Temporary Redirect"
+00:13:46 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/speechbrain/spkrec-ecapa-voxceleb/0f99f2d0ebe89ac095bcc5903c4dd8f72b367286/label_encoder.txt "HTTP/1.1 200 OK"
+00:13:46 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/speechbrain/spkrec-ecapa-voxceleb/0f99f2d0ebe89ac095bcc5903c4dd8f72b367286/label_encoder.txt "HTTP/1.1 200 OK"
+label_encoder.txt: 129kB [00:00, ?B/s]
+00:13:46 | INFO | speechbrain.utils.parameter_transfer | Loading pretrained files for: embedding_model, mean_var_norm_emb, classifier, label_encoder
+00:13:52 | INFO | voice_embedding | x-vector shape: (192,)  (norm=270.270)
+00:13:52 | INFO | voice_embedding | [OK] Speaker embedding saved: models/speaker_embedding.npy  shape=(192,)
+00:13:52 | INFO | pipeline | [✓] Speaker embedding: shape=(192,)  norm=270.2699
+00:13:52 | INFO | pipeline |
+00:13:52 | INFO | pipeline | ============================================================
+00:13:52 | INFO | pipeline |   STAGE 7: Zero-Shot TTS Synthesis in Santhali (Task 3.3)
+00:13:52 | INFO | pipeline | ============================================================
+00:13:52 | ERROR | pipeline | Translation not found: outputs/santhali_translation.json
+00:13:52 | INFO | pipeline |
+00:13:52 | INFO | pipeline | ============================================================
+00:13:52 | INFO | pipeline |   STAGE 8: DTW Prosody Warping (Task 3.2)
+00:13:52 | INFO | pipeline | ============================================================
+00:13:52 | ERROR | pipeline | TTS raw output not found: outputs/tts_raw.wav
+00:13:52 | INFO | pipeline |
+00:13:52 | INFO | pipeline | ============================================================
+00:13:52 | INFO | pipeline |   STAGE 9: Anti-Spoofing Countermeasure (Task 4.1)
+00:13:52 | INFO | pipeline | ============================================================
+00:13:52 | ERROR | pipeline | Spoof audio not found: outputs/tts_raw.wav
+00:13:52 | INFO | pipeline |
+00:13:52 | INFO | pipeline | ============================================================
+00:13:52 | INFO | pipeline |   STAGE 10: Adversarial Robustness — FGSM (Task 4.2)
+00:13:52 | INFO | pipeline | ============================================================
+00:13:53 | INFO | adversarial | LID weights loaded: models/lid_model.pt
+00:13:54 | INFO | adversarial | Clean segment prediction: en (expected: hi)
+00:13:54 | INFO | adversarial | Max ε for SNR ≥ 40.0 dB: 0.000671
+00:13:57 | INFO | adversarial | ε=1.00e-05 | SNR=76.9dB | pred=en | ATTACK SUCCESS ✓
+00:13:57 | INFO | adversarial |   ★ Minimum effective ε found: 0.000010
+00:13:57 | INFO | adversarial | ε=1.62e-05 | SNR=72.7dB | pred=en | ATTACK SUCCESS ✓
+00:13:57 | INFO | adversarial | ε=2.64e-05 | SNR=68.5dB | pred=en | ATTACK SUCCESS ✓
+00:13:57 | INFO | adversarial | ε=4.28e-05 | SNR=64.3dB | pred=en | ATTACK SUCCESS ✓
+00:13:58 | INFO | adversarial | ε=6.95e-05 | SNR=60.1dB | pred=en | ATTACK SUCCESS ✓
+00:13:58 | INFO | adversarial | ε=1.13e-04 | SNR=55.9dB | pred=en | ATTACK SUCCESS ✓
+00:13:58 | INFO | adversarial | ε=1.83e-04 | SNR=51.6dB | pred=en | ATTACK SUCCESS ✓
+00:13:58 | INFO | adversarial | ε=2.98e-04 | SNR=47.4dB | pred=en | ATTACK SUCCESS ✓
+00:13:58 | INFO | adversarial | ε=4.83e-04 | SNR=43.2dB | pred=en | ATTACK SUCCESS ✓
+00:13:59 | INFO | adversarial | ε=7.85e-04 | SNR=39.0dB | pred=en | ✗
+00:13:59 | INFO | adversarial | ε=1.27e-03 | SNR=34.8dB | pred=en | ✗
+00:13:59 | INFO | adversarial | ε=2.07e-03 | SNR=30.6dB | pred=en | ✗
+00:13:59 | INFO | adversarial | ε=3.36e-03 | SNR=26.4dB | pred=en | ✗
+00:14:00 | INFO | adversarial | ε=5.46e-03 | SNR=22.2dB | pred=en | ✗
+00:14:00 | INFO | adversarial | ε=8.86e-03 | SNR=18.0dB | pred=en | ✗
+00:14:00 | INFO | adversarial | ε=1.44e-02 | SNR=13.7dB | pred=en | ✗
+00:14:00 | INFO | adversarial | ε=2.34e-02 | SNR=9.5dB | pred=en | ✗
+00:14:01 | INFO | adversarial | ε=3.79e-02 | SNR=5.3dB | pred=en | ✗
+00:14:01 | INFO | adversarial | ε=6.16e-02 | SNR=1.1dB | pred=en | ✗
+00:14:01 | INFO | adversarial | ε=1.00e-01 | SNR=-3.1dB | pred=en | ✗
+00:14:02 | INFO | adversarial |
+==================================================
+00:14:02 | INFO | adversarial | Adversarial Robustness Report
+00:14:02 | INFO | adversarial | ==================================================
+00:14:02 | INFO | adversarial | Min effective ε : 1e-05
+00:14:02 | INFO | adversarial | Max ε (SNR≥40dB): 0.000671
+00:14:02 | INFO | adversarial | Report saved    : outputs/adversarial\adversarial_report.json
+00:14:02 | INFO | adversarial | ==================================================
+00:14:02 | INFO | pipeline | [✓] Adversarial analysis complete
+00:14:02 | INFO | pipeline |     Min effective ε: 1e-05
+00:14:02 | INFO | pipeline |     Max ε (SNR≥40dB): 0.000671
+00:14:02 | INFO | pipeline |
+00:14:02 | INFO | pipeline | ============================================================
+00:14:02 | INFO | pipeline |   STAGE 11: Evaluation Summary
+00:14:02 | INFO | pipeline | ============================================================
+00:14:02 | INFO | pipeline |
+============================================================
+00:14:02 | INFO | pipeline |   EVALUATION SUMMARY
+00:14:02 | INFO | pipeline | ============================================================
+00:14:02 | INFO | pipeline |   ? WER_EN                             : N/A  (target: < 15%)
+00:14:02 | INFO | pipeline |   ? WER_HI                             : N/A  (target: < 25%)
+00:14:02 | INFO | pipeline |   ✓ LID_switch_precision_ms            : 10.0  (target: ±200ms)
+00:14:02 | INFO | pipeline |   ? MCD                                : N/A  (target: < 8.0)
+00:14:02 | INFO | pipeline |   ? EER                                : N/A  (target: < 10%)
+00:14:02 | INFO | pipeline |   ✓ min_effective_epsilon              : 1e-05  (target: reported)
+00:14:02 | INFO | pipeline | ============================================================
+00:14:02 | INFO | pipeline |
+[✓] Evaluation summary saved: outputs/evaluation_summary.json
+00:14:02 | INFO | pipeline |
+[DONE] Pipeline completed in 27.3 minutes.
+(venv) PS G:\Downloads\PA2_submit>
