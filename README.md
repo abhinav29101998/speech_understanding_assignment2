@@ -1,4 +1,4 @@
-# Speech Understanding — Programming Assignment 2
+# Speech Understanding — Assignment 2
 ## Code-Switched Lecture Transcription & LRL Voice Cloning Pipeline
 
 ### Repository Structure
@@ -6,7 +6,7 @@
 PA2/
 ├── README.md
 ├── requirements.txt
-├── pipeline.py                  # Master orchestrator — run this end-to-end
+├── pipeline.py                  # Master orchestrator 
 ├── src/
 │   ├── data_collection.py       # YouTube scraping + segment extraction
 │   ├── denoising.py             # Spectral Subtraction denoiser
@@ -28,7 +28,7 @@ PA2/
 ├── models/                      # Downloaded/saved model weights (git-ignored)
 └── outputs/
     ├── original_segment.wav
-    ├── student_voice_ref.wav    # Place your 60s recording here before running
+    ├── student_voice_ref.wav    
     └── output_LRL_cloned.wav
 ```
 
